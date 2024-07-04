@@ -8,7 +8,7 @@ create table alimento(
     qtd int not null,
     perecivel  decimal(65) not null,
     vencimento int not null,
-    lote_pk int not null, foreign key (lote_fk) references lote (pk),
+    lote_fk int not null, foreign key (lote_fk) references lote (pk),
     estoque_fk int not null, foreign key (estoque_fk) references estoque (pk),
     localArmazenamento_fk int not null, foreign key (localArmazenamento_fk) references localArmazenamento (pk)
 );
@@ -49,7 +49,6 @@ create table pedido(
 );
 
  insert into alimento (nome, qtd, perecivel, vencimento) values ("pastel", 15, 56789, '2024-12-25');
-
 
 
 
