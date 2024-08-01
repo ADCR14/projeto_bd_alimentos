@@ -10,12 +10,12 @@ create table alimento(
     vencimento int not null,
     lote_fk int not null, foreign key (lote_fk) references lote (pk),
     estoque_fk int not null, foreign key (estoque_fk) references estoque (pk),
-    localArmazenamento_fk int not null, foreign key (localArmazenamento_fk) references localArmazenamento (pk)
+    local_armazenamento_fk int not null, foreign key (local_armazenamento_fk) references local_armazenamento (pk)
 );
 
 create table lote(
 	pk int not null auto_increment, primary key(pk), 
-    numeracaolote varchar(255) not null
+    numeracao_lote varchar(255) not null
 );
 
 create table estoque(
@@ -24,7 +24,7 @@ create table estoque(
     pedido_fk int not null, foreign key (pedido_fk) references pedido (pk)
 );
 
-create table localarmazenamento(
+create table local_armazenamento(
 	pk int not null auto_increment, primary key(pk), 
     nome varchar(255) not null,
     prateleira varchar(45),
@@ -33,7 +33,7 @@ create table localarmazenamento(
 );
 
 
-create table detalhepedido(
+create table detalhe_pedido(
 	pk int not null auto_increment, primary key(pk), 
     nome varchar(255) not null,
     qtd int not null,
@@ -45,10 +45,14 @@ create table detalhepedido(
 create table pedido(
 	pk int not null auto_increment, primary key(pk), 
     cabecalho varchar(255) not null,
-    detalhepedido_fk int not null, foreign key (detalhepedido_fk) references detalhepedido (pk)
+    detalhe_pedido_fk int not null, foreign key (detalhe_pedido_fk) references detalhe_pedido (pk)
 );
 
- insert into alimento (nome, qtd, perecivel, vencimento) values ("pastel", 15, 56789, '2024-12-25');
+
+insert into lote (numeracao_lote) values ("1234567");
+insert into lote (numeracao_lote) values ("1234578");
+insert into lote (numeracao_lote) values ("1234589");
+insert into lote (numeracao_lote) values ("1234510");
 
 
 
