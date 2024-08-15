@@ -32,6 +32,9 @@ create table pedido(
 );
 
 
+
+select * from detalhe_pedido;
+
 insert into alimento (nome) values ("leite");
 insert into alimento (nome) value ("chá");
 insert into alimento (nome) value ("pão");
@@ -46,7 +49,9 @@ insert into detalhe_pedido (quantidade_solicitada, valor, status_entrega) value 
 insert into detalhe_pedido (quantidade_solicitada, valor, status_entrega) value (2, 27.50, "0");
 insert into detalhe_pedido (quantidade_solicitada, valor, status_entrega) value (5, 60.50, "1");
 
-
+insert into pedido (origem, data_pedido, data_entrega, detalhe_pedido_fk) value ("Brasil", "2024-08-01", "2024-08-06", 1);
+insert into pedido (origem, data_pedido, data_entrega, detalhe_pedido_fk) value ("Brasil", "2024-10-01", "2024-10-15", 2);
+insert into pedido (origem, data_pedido, data_entrega, detalhe_pedido_fk) value ("itália", "2024-12-11", "2025-01-06", 3);
 
 
 
